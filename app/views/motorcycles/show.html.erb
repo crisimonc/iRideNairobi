@@ -2,5 +2,11 @@
 <p><%= @motorcycle.motor_type  %></p>
 <p><%= @motorcycle.description  %></p>
 <p><%= @motorcycle.price.to_s + "USD per day" %></p>
-<%= image_tag(@motorcycle.picture) %>
+
+
+ <% if @motorcycle.uploaded_photo.present? %>
+  <%= cl_image_tag(@motorcycle.uploaded_photo, height: 300, width: 400, crop: :fill) %>
+  <% else %>
+  <%= image_tag(@motorcycle.picture) %>
+<% end %>
 
