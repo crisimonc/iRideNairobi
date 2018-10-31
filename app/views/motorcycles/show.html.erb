@@ -1,6 +1,5 @@
-<h2>@moto.name</h2>
-<h3><%= moto.name  %></h3>
-<p><%= moto.type  %></p> 
-<p><%= moto.description  %></p>
-<p><%= moto.price + "USD per day" %></p>
-<%= image_tag(moto.picture) %>
+<h2><%= @motorcycle.name %></h2>
+<p><%= @motorcycle.motor_type  %></p> 
+<p><%= @motorcycle.description  %></p>
+<p><%= @motorcycle.price.to_s + "USD per day" %></p>
+<%= image_tag(@motorcycle.picture) %>

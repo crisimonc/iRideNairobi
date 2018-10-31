@@ -1,7 +1,7 @@
 <h1>List of motorcycles</h1>
 
 <% @motorcycles.each do |moto|%>
-<h3><%= moto.name  %></h3>
-<p><%= moto.type  %></p>  
-<p><%= moto.price + "USD per day" %></p>  
+<h3><%= link_to moto.name, motorcycle_path(moto) %></h3>
+<p><%= moto.motor_type  %></p>  
+<p><%= moto.price.to_s + "USD per day" %></p>  
 <% end %>
