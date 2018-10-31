@@ -58,7 +58,10 @@ GEM
     carrierwave (1.2.3)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
+      aws_cf_signer
       mime-types (>= 1.16)
+      rest-client
+    cloudinary (1.9.1)
       aws_cf_signer
       rest-client
     coderay (1.1.2)
@@ -228,7 +231,7 @@ DEPENDENCIES
   bootsnap
   bootstrap-sass (~> 3.3)
   carrierwave (~> 1.2)
-  cloudinary
+  cloudinary (~> 1.2, >= 1.2.2)
   devise
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
@@ -252,4 +255,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.6
+   1.17.1

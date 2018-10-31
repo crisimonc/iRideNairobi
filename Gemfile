@@ -8,6 +8,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'cloudinary', '~> 1.2', '>= 1.2.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -32,5 +33,4 @@ group :development, :test do
 end
 
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'cloudinary'
 
