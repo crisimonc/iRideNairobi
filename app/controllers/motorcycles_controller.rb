@@ -22,13 +22,19 @@ class MotorcyclesController < ApplicationController
 	def edit
       @motorcycle = Motorcycle.find(params[:id])
     end
-
-    def update
+  
+  def update
       @motorcycle = Motorcycle.find(params[:id])
       @motorcycle.update(motorcycle_params)
       redirect_to motorcycle_path(@motorcycle)
     end
+  
+  def destroy
+    @motorcycle = Motorcycle.find(params[:id])
+    @motorcycle.destroy
 
+    redirect_to motorcycles_url
+  end
  
 private
 
