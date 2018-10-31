@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_133858) do
 
   create_table "motorcycles", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "motor_type"
     t.text "description"
     t.integer "price"
     t.string "picture"
