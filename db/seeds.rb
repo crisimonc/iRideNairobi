@@ -2,7 +2,14 @@ require 'open-uri'
 
 puts "Cleaning DB..."
 Motorcycle.destroy_all
+User.destroy_all
 
+puts "---------------------"
+puts "Login:"
+puts "test@test.com"
+puts "pass: 123456"
+puts "---------------------"
+User.create(email: "test@test.com", password: "123456")
 
 puts "Creating motorcycles..."
 motorcycles_attributes = [
