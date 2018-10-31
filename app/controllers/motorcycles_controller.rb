@@ -33,7 +33,7 @@ class MotorcyclesController < ApplicationController
 private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:name, :motor_type, :description, :price, :picture)
+    params.require(:motorcycle).permit(:name, :motor_type, :description, :price, :picture, :uploaded_photo)
   end
 
 end

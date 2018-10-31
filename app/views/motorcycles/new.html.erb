@@ -1,33 +1,12 @@
-<<h2>CRUD Motorcycles</h2>
+<h2>Create a new motorcyle</h2>
 
-  <%= form_for(@motorcycle) do |f| %>
-
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :motor_type %>
-      <%= f.text_field :motor_type, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :description %>
-      <%= f.text_field :description, class: 'form-control' %>
-    </div>
-
-
-    <div class="form-group">
-      <%= f.label :price %>
-      <%= f.text_field :price, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :picture %>
-      <%= f.text_field :picture, class: 'form-control' %>
-    </div>
-
-  <%= f.submit class: 'btn btn-primary' %>
-
+<%= simple_form_for @motorcycle do |f| %>
+  <%= f.input :name, label: 'Name' %>
+  <%= f.input :motor_type, label: 'Type' %>
+  <%= f.input :description, label: 'Description' %>
+  <%= f.input :price, label: 'Price' %>
+  <%= f.input :uploaded_photo %>
+  <%= f.input :uploaded_photo_cache, as: :hidden %>
+  <%= f.button :submit %>
 <% end %>
+
