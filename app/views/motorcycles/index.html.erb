@@ -1,0 +1,7 @@
+<h1>List of motorcycles</h1>
+
+<% @motorcycles.each do |moto|%>
+<h3><%= moto.name  %></h3>
+<p><%= moto.type  %></p>  
+<p><%= moto.price + "USD per day" %></p>  
+<% end %>
