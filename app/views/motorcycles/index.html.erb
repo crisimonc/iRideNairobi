@@ -4,4 +4,5 @@
 <h3><%= link_to moto.name, motorcycle_path(moto) %></h3>
 <p><%= moto.motor_type  %></p>  
 <p><%= moto.price.to_s + "USD per day" %></p>  
+<p><%= link_to "Edit", edit_motorcycle_path(moto) %></p>
 <% end %>
