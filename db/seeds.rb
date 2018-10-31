@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-5.times do 
+5.times do
 	Motorcycle.create(
-		name:"CrazyWheels", 
-		motor_type:"OnTheRoad", 
-		description:"Rebel", 
-		price:50, 
+		name:"CrazyWheels",
+		motor_type:"OnTheRoad",
+		description:"Rebel",
+		price:50,
 		picture:"https://picsum.photos/200/300/?random")
 end
