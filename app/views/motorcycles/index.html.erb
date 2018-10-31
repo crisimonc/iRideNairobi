@@ -2,6 +2,7 @@
 
 <% @motorcycles.each do |moto|%>
 <h3><%= link_to moto.name, motorcycle_path(moto) %></h3>
-<p><%= moto.motor_type  %></p>  
-<p><%= moto.price.to_s + "USD per day" %></p>  
+  <p><%= moto.motor_type  %></p>
+  <p><%= moto.price.to_s + "USD per day" %></p>
+  <%= link_to "delete", moto, method: :delete, data: { confirm: "Are you sure you want to delete this motorcycle?" } %>
 <% end %>

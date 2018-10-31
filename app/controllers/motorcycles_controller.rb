@@ -19,6 +19,13 @@ class MotorcyclesController < ApplicationController
     redirect_to @motorcycle
   end
 
+  def destroy
+    @motorcycle = Motorcycle.find(params[:id])
+    @motorcycle.destroy
+
+    redirect_to motorcycles_url
+  end
+
 
 private
 
