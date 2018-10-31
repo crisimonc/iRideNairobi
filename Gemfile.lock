@@ -227,12 +227,8 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)
-<<<<<<< HEAD
-  carrierwave
-=======
   carrierwave (~> 1.2)
   cloudinary
->>>>>>> 0492a21d9b834da01ded9f356f6330f89bd876e4
   devise
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
