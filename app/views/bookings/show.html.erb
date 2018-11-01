@@ -10,4 +10,7 @@
   End date: <%= @booking.end_date %>
 </p>
 
+<p><%= link_to "Add a Review", new_motorcycle_booking_review_path(@booking.motorcycle, @booking) %></p>
+
+<p><%= link_to "See all your bookings", bookings_path %></p>
 
