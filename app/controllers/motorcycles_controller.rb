@@ -15,7 +15,9 @@ skip_before_action :authenticate_user!, only: [:index, :show]
           c = booking.start_date
           d = booking.end_date
 
-          @motorcycles << booking.motorcycle unless (a..b)overlaps?(c..d)
+          if !(a..b).overlaps?(c..d)
+            @motorcycles << booking.motorcycle
+          end
 
           # if ((booking.start_date > Date.parse(params["search"]["ends_at"]) ||
           #   booking.end_date < Date.parse(params["search"]["starts_at"])) &&
@@ -35,7 +37,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def new
       @motorcycle = Motorcycle.new
-    end
+  end
 
     def create
       @motorcycle = Motorcycle.new(motorcycle_params)
@@ -46,13 +48,13 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def edit
       @motorcycle = Motorcycle.find(params[:id])
-    end
+  end
 
   def update
       @motorcycle = Motorcycle.find(params[:id])
       @motorcycle.update(motorcycle_params)
       redirect_to motorcycle_path(@motorcycle)
-    end
+  end
 
   def destroy
     @motorcycle = Motorcycle.find(params[:id])
