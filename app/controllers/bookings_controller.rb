@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def index
     @bookings = Booking.all
   end
@@ -16,16 +17,17 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     @booking.motorcycle = Motorcycle.find(params[:motorcycle_id])
+    @booking.user = current_user
     @booking.save
 
-    redirect_to motorcycle_bookings_path(@booking.motorcycle)
+    redirect_to motorcycle_booking_path(@booking.motorcycle, @booking)
   end
 
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :motorcycle_id, :current_user)
+    params.require(:booking).permit(:start_date, :end_date, :motorcycle_id, :user_id)
   end
 
 
