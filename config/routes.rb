@@ -5,4 +5,3 @@ Rails.application.routes.draw do
   resources :motorcycles do
     resources :bookings
   end
-end

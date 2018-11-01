@@ -1,4 +1,12 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.all
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     @motorcycle = Motorcycle.find(params[:motorcycle_id])
     @booking = Booking.new
@@ -19,6 +27,7 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :motorcycle_id, :current_user)
   end
+
 
 end
 
