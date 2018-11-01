@@ -1,8 +1,9 @@
 require 'open-uri'
 
 puts "Cleaning DB..."
-Motorcycle.destroy_all
+Booking.destroy_all
 User.destroy_all
+Motorcycle.destroy_all
 
 puts "---------------------"
 puts "Login:"
@@ -143,13 +144,13 @@ def time_rand from = 0.0, to = Time.now
 end
 
 
-4.times do 
+4.times do
   motorcycle = Motorcycle.all.sample
   user = User.all.sample
   Booking.create(user: user, motorcycle: motorcycle, start_date: time_rand.to_date, end_date: time_rand.to_date)
 end
 
-4.times do 
+50.times do
   booking = Booking.all.sample
   Review.create(booking: booking, content: "blabla", stars: 4)
 end

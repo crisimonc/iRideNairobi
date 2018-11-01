@@ -2,8 +2,32 @@ class MotorcyclesController < ApplicationController
 skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def index
-	  @motorcycles = Motorcycle.all
-	end
+
+    if params["search"]["starts_at"].present? && params["search"]["ends_at"].present?
+      @motorcycles = []
+
+      a = Date.parse(params["search"]["starts_at"])
+      b = Date.parse(params["search"]["ends_at"])
+
+      Motorcycle.all.each do |motorcycle|
+
+        motorcycle.bookings.each do |booking|
+          c = booking.start_date
+          d = booking.end_date
+
+          @motorcycles << booking.motorcycle unless (a..b)overlaps?(c..d)
+
+          # if ((booking.start_date > Date.parse(params["search"]["ends_at"]) ||
+          #   booking.end_date < Date.parse(params["search"]["starts_at"])) &&
+          #   Date.parse(params["starts_at"]) < Date.parse(params["ends_at"])
+        end
+      end
+      @motorcycles
+    else
+      @motorcycles = Motorcycle.all
+    end
+  end
+
 
 	def show
 	  @motorcycle = Motorcycle.find(params[:id])
