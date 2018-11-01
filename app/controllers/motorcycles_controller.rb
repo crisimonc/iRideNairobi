@@ -34,7 +34,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     @motorcycle = Motorcycle.find(params[:id])
     @motorcycle.destroy
 
-    redirect_to motorcycles_url
+    redirect_to @motorcycles
   end
 
 private

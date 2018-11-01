@@ -12,5 +12,5 @@
 
 
 <button>
-<%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle) %>
+<%= link_to "Book #{@motorcycle.name} now", new_user_registration_path(:moto => params[:id]) %>
 </button>
