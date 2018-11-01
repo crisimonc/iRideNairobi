@@ -10,3 +10,7 @@
   <%= image_tag(@motorcycle.picture) %>
 <% end %>
 
+<button>
+  <%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle) %>
+</button>
+
