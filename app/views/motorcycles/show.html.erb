@@ -1,7 +1,7 @@
 <h2><%= @motorcycle.name %></h2>
 <p><%= @motorcycle.motor_type  %></p>
 <p><%= @motorcycle.description  %></p>
-<p><%= @motorcycle.price.to_s + "USD per day" %></p>
+<p><%= @motorcycle.price.to_s + " USD per day" %></p>
 
 
  <% if @motorcycle.uploaded_photo.present? %>
@@ -11,5 +11,6 @@
 <% end %>
 
 
-
-<h3><%= link_to "Book me now", new_user_registration_path(:moto => params[:id]) %></h3>
+<button>
+<%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle) %>
+</button>

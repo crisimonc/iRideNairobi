@@ -1,5 +1,14 @@
 <h2>Booking Status page</h2>
 
+<p> Hello, <%= @booking.user.email  %> </p>
+
+<%= link_to @booking.motorcycle.name, motorcycle_path(@booking.motorcycle) %>
+
+<p>
+  Start date: <%= @booking.start_date %>
+  <br>
+  End date: <%= @booking.end_date %>
+</p>
 
 <h3><%= link_to "Add Review", new_review_path %></h3>
 
