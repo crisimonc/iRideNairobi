@@ -1,5 +1,8 @@
 <h2>All my bookings</h2>
 
 <% @bookings.each do |booking| %>
-  <%= booking.name %>
+  <%= booking.user.email %>
+  <%= booking.motorcycle.name %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
 <% end %>
