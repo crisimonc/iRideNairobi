@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :motorcycles do 
-  	resources :bookings
+  	resources :bookings, only: [:new, :create, :show] do
+ 		resources :reviews, only: [:new, :create]	
+  	end
   end
-
-  resources :reviews
+  
+  resources :bookings, only: [:index]
 
 end

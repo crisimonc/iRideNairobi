@@ -1,18 +1,18 @@
 class ReviewsController < ApplicationController
 
   def new
-    @booking = booking.find(params[:booking_id].to_i)
-    @review = Review.new(booking_id: @booking.id)
+    @booking = Booking.find(params[:booking_id].to_i)
+    @review = Review.new(booking: @booking)
   end
 
   def create
     @review = Review.new(review_params)
-    @booking = booking.find(params[:booking_id].to_i)
+    @booking = Booking.find(params[:booking_id].to_i)
     @review.booking = @booking
     @review.save
     
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to motorcycle_path(@booking.motorcycle)
     else
   	  render :new
   	end
