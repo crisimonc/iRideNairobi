@@ -137,3 +137,19 @@ puts "Motorcycles created!"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+def time_rand from = 0.0, to = Time.now
+  Time.at(from + rand * (to.to_f - from.to_f))
+end
+
+
+4.times do 
+  motorcycle = Motorcycle.all.sample
+  user = User.all.sample
+  Booking.create(user: user, motorcycle: motorcycle, start_date: time_rand.to_date, end_date: time_rand.to_date)
+end
+
+4.times do 
+  booking = Booking.all.sample
+  Review.create(booking: booking, content: "blabla", stars: 4)
+end
