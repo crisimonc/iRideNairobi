@@ -1,4 +1,5 @@
 class MotorcyclesController < ApplicationController
+skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def index
 	  @motorcycles = Motorcycle.all
@@ -22,20 +23,20 @@ class MotorcyclesController < ApplicationController
 	def edit
       @motorcycle = Motorcycle.find(params[:id])
     end
-  
+
   def update
       @motorcycle = Motorcycle.find(params[:id])
       @motorcycle.update(motorcycle_params)
       redirect_to motorcycle_path(@motorcycle)
     end
-  
+
   def destroy
     @motorcycle = Motorcycle.find(params[:id])
     @motorcycle.destroy
 
     redirect_to motorcycles_url
   end
- 
+
 private
 
   def motorcycle_params
