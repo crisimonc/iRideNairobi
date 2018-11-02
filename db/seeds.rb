@@ -144,14 +144,34 @@ def time_rand from = 0.0, to = Time.now
 end
 
 
-5.times do
-  motorcycle = Motorcycle.all.sample
-  user = User.all.sample
-  Booking.create(user: user, motorcycle: motorcycle, start_date: time_rand.to_date, end_date: time_rand.to_date)
-end
 
+# Seeds to try out availability of bookings
+bookings_attributes = [
+  {
+    motorcycle: Motorcycle.find_by(name: "Black Panther"),
+    user: User.all.sample,
+    start_date: Date.new(2018,11,1),
+    end_date: Date.new(2018,11,10),
+  }
+]
+
+Booking.create!(bookings_attributes)
+
+# 5.times do
+#   motorcycle = Motorcycle.all.sample
+#   user = User.all.sample
+#   Booking.create(user: user, motorcycle: motorcycle, start_date: time_rand.to_date, end_date: time_rand.to_date)
+# end
+
+Motorcycle.all.each do |moto|
+  start_date = Date.new(2018,11,11)
+  end_date = Date.new(2018,11,30)
+  user = User.all.sample
+  Booking.create!(motorcycle: moto, user: user, start_date: start_date, end_date: end_date)
+end
 
 30.times do
   booking = Booking.all.sample
   Review.create(booking: booking, content: "blabla", stars: 4)
 end
+

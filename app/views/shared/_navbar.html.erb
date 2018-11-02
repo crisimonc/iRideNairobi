@@ -8,11 +8,11 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <%= simple_form_for :search, :url => motorcycles_path, method: "get",
-  wrapper: :inline_form,
-  html: { class: "form-inline" },
-  wrapper_mappings: {
-    boolean: :inline_boolean
-  } do |f| %>
+      wrapper: :inline_form,
+      html: { class: "form-inline" },
+      wrapper_mappings: {
+        boolean: :inline_boolean
+      } do |f| %>
 
   <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker mr-sm-2"} %>
   <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker mr-sm-2"} %>
