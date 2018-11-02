@@ -5,28 +5,23 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
     if params["search"]["starts_at"].present? && params["search"]["ends_at"].present?
       @motorcycles = []
-
       a = Date.parse(params["search"]["starts_at"])
       b = Date.parse(params["search"]["ends_at"])
 
       Motorcycle.all.each do |motorcycle|
 
-        motorcycle.bookings.each do |booking|
-          c = booking.start_date
-          d = booking.end_date
+        if motorcycle.bookings.all? do |booking|
+          search_dates = (a..b)
+          booking_dates = (booking.start_date..booking.end_date)
 
-          if !(a..b).overlaps?(c..d)
-            @motorcycles << booking.motorcycle
+          !(search_dates).overlaps?(booking_dates)
           end
 
-          # if ((booking.start_date > Date.parse(params["search"]["ends_at"]) ||
-          #   booking.end_date < Date.parse(params["search"]["starts_at"])) &&
-          #   Date.parse(params["starts_at"]) < Date.parse(params["ends_at"])
+          @motorcycles << motorcycle
         end
-      end
-      @motorcycles
+      end #Motorcycles.all.each
     else
-      @motorcycles = Motorcycle.all
+        @motorcycles = Motorcycle.all
     end
   end
 

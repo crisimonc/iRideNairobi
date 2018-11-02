@@ -1,4 +1,8 @@
 class Booking < ApplicationRecord
+# before_validation (on: :create) do
+#   check_availability
+# end
+
   belongs_to :motorcycle
   belongs_to :user
   has_many :reviews
@@ -11,12 +15,7 @@ class Booking < ApplicationRecord
   	Booking.where(user: user)
   end
 
-  # def self.check_availability(a, b)
-    # @listed_motorcyles = []
-    #   Booking.all.each do |booking|
-    #   	c = booking.start_date
-    #   	d = booking.end_date
-    #   end
+
   # end
 end
 
