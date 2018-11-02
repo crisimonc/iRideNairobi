@@ -20,21 +20,21 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
   {
     name: "Blizzard",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
   {
     name: "Gaddafi",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -42,7 +42,7 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -50,7 +50,7 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -58,7 +58,7 @@ motorcycles_attributes = [
     motor_type: "Yamaha XT225",
     description: "Engine size: 225cc / max speed 120 kph | Fuel usage: circa 650 KSh / 100 km | Manual transition with 5 gears",
     price: 19,
-    picture: "YamahaXT225.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179869/iRideNairobi/YamahaXT225.jpg.jpg",
   },
 
   {
@@ -66,21 +66,21 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179869/iRideNairobi/YamahaXT225.jpg.jpg",
   },
   {
     name: "Mathai",
     motor_type: "Wego 110",
     description: "Engine size: 110cc / max speed 85 kph | Fuel usage: circa 250 KSh / 100 km | Automatic transition",
     price: 13,
-    picture: "Wego110.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179738/iRideNairobi/Wego110.jpg",
   },
   {
     name: "Nyerere",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179738/iRideNairobi/Wego110.jpg",
   },
 
   {
@@ -88,7 +88,7 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -96,7 +96,7 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -104,21 +104,21 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
   {
     name: "Steve Biko",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
   {
     name: "Uhuru",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   }
 ]
 
