@@ -14,6 +14,14 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+
+<!--     The url above can be removed once the app goes to production and the commmented out part below should be unlocked.
+ -->    <%#= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_SERVER_KEY']}" %>
+
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag "map" %>
+
+
   </body>
 </html>
