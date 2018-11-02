@@ -7,12 +7,20 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <% if user_signed_in? %>
+    <%= simple_form_for :search, :url => motorcycles_path, method: "get",
+  wrapper: :inline_form,
+  html: { class: "form-inline" },
+  wrapper_mappings: {
+    boolean: :inline_boolean
+  } do |f| %>
 
-      <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+  <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker mr-sm-2"} %>
+  <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker mr-sm-2"} %>
+
+  <%= f.button :submit, class: "btn-primary mx-sm-2" %>
+<% end %>
+
+    <% if user_signed_in? %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

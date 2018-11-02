@@ -4,9 +4,34 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 	def index
 	  @motorcycles = Motorcycle.all
 
-# @motorcycles = Booking.check_availability(params dates)
+    if params["search"]["starts_at"].present? && params["search"]["ends_at"].present?
+      @motorcycles = []
 
-	end
+      a = Date.parse(params["search"]["starts_at"])
+      b = Date.parse(params["search"]["ends_at"])
+
+      Motorcycle.all.each do |motorcycle|
+
+        motorcycle.bookings.each do |booking|
+          c = booking.start_date
+          d = booking.end_date
+
+          if !(a..b).overlaps?(c..d)
+            @motorcycles << booking.motorcycle
+          end
+
+          # if ((booking.start_date > Date.parse(params["search"]["ends_at"]) ||
+          #   booking.end_date < Date.parse(params["search"]["starts_at"])) &&
+          #   Date.parse(params["starts_at"]) < Date.parse(params["ends_at"])
+        end
+      end
+      @motorcycles
+    else
+      @motorcycles = Motorcycle.all
+    end
+  end
+
+>>>>>>> fab2b2cbd498ea1bfd1796ffa7b4343589fb6052
 
 	def show
 	  @motorcycle = Motorcycle.find(params[:id])
@@ -14,7 +39,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def new
       @motorcycle = Motorcycle.new
-    end
+  end
 
     def create
       @motorcycle = Motorcycle.new(motorcycle_params)
@@ -25,13 +50,13 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def edit
       @motorcycle = Motorcycle.find(params[:id])
-    end
+  end
 
   def update
       @motorcycle = Motorcycle.find(params[:id])
       @motorcycle.update(motorcycle_params)
       redirect_to motorcycle_path(@motorcycle)
-    end
+  end
 
   def destroy
     @motorcycle = Motorcycle.find(params[:id])
