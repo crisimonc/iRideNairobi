@@ -1,9 +1,10 @@
 require 'open-uri'
 
 puts "Cleaning DB..."
-Booking.destroy_all
-User.destroy_all
 Motorcycle.destroy_all
+User.destroy_all
+Review.destroy_all
+Booking.destroy_all
 
 puts "---------------------"
 puts "Login:"
