@@ -143,15 +143,17 @@ def time_rand from = 0.0, to = Time.now
   Time.at(from + rand * (to.to_f - from.to_f))
 end
 
-
+puts "Creating Bookings..."
 5.times do
   motorcycle = Motorcycle.all.sample
   user = User.all.sample
-  Booking.create(user: user, motorcycle: motorcycle, start_date: time_rand.to_date, end_date: time_rand.to_date)
+  Booking.create(user: user, motorcycle: motorcycle, start_date: time_rand.to_date, end_date: time_rand.to_date, address: "Nairobi")
 end
+puts "Bookings created!"
 
-
+puts "Creating Reviews..."
 30.times do
   booking = Booking.all.sample
   Review.create(booking: booking, content: "blabla", stars: 4)
 end
+puts "Reviews created!"
