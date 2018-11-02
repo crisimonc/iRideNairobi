@@ -10,18 +10,26 @@
   <%= image_tag(@motorcycle.picture) %>
 <% end %>
 
-<p>Reviews</p>
-  <br>
+<p>
+  <%= pluralize @motorcycle.reviews.size, "review" %>
+</p>
+<br>
   <% @motorcycle.reviews.each do |review|%>
     <% review.stars.times do%>
       <i class="far fa-star"></i>
      <% end %>
     <br>
-    <%= review.content %>
+    <p><%= review.content %></p> 
     <br>
  <% end %>
 
 
 <button>
-<%= link_to "Book #{@motorcycle.name} now", new_user_registration_path(:moto => params[:id]) %>
+<% if user_signed_in? %>
+  <%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle) %>
+    <% else %>
+  <%= link_to "Book #{@motorcycle.name} now", new_user_registration_path(moto: params[:id]) %>
+<% end %>
 </button>
+
+

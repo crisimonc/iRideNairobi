@@ -25,7 +25,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     end
   end
 
-
 	def show
 	  @motorcycle = Motorcycle.find(params[:id])
 	end
