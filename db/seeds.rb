@@ -1,9 +1,10 @@
 require 'open-uri'
 
 puts "Cleaning DB..."
-Booking.destroy_all
 User.destroy_all
 Motorcycle.destroy_all
+Review.destroy_all
+Booking.destroy_all
 
 puts "---------------------"
 puts "Login:"
@@ -124,20 +125,6 @@ motorcycles_attributes = [
 Motorcycle.create!(motorcycles_attributes)
 puts "Motorcycles created!"
 
-# create_table "motorcycles", force: :cascade do |t|
-#   t.string "name"
-#   t.string "type"
-#   t.text "description"
-#   t.integer "price"
-#   t.string "picture"
-#
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 def time_rand from = 0.0, to = Time.now
   Time.at(from + rand * (to.to_f - from.to_f))
