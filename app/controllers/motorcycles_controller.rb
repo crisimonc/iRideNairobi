@@ -3,6 +3,9 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def index
 	  @motorcycles = Motorcycle.all
+
+# @motorcycles = Booking.check_availability(params dates)
+
 	end
 
 	def show
