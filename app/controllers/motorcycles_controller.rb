@@ -2,7 +2,6 @@ class MotorcyclesController < ApplicationController
 skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def index
-	  @motorcycles = Motorcycle.all
 
     if params["search"]["starts_at"].present? && params["search"]["ends_at"].present?
       @motorcycles = []
@@ -30,8 +29,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
       @motorcycles = Motorcycle.all
     end
   end
-
->>>>>>> fab2b2cbd498ea1bfd1796ffa7b4343589fb6052
 
 	def show
 	  @motorcycle = Motorcycle.find(params[:id])
