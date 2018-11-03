@@ -1,16 +1,12 @@
-<h2>Booking Status page</h2>
-
-<p> Hello, <%= @booking.user.email  %> </p>
-
-<%= link_to @booking.motorcycle.name, motorcycle_path(@booking.motorcycle) %>
-
-<p>
-  Start date: <%= @booking.start_date %>
-  <br>
-  End date: <%= @booking.end_date %>
-</p>
-
-<p><%= link_to "Add a Review", new_motorcycle_booking_review_path(@booking.motorcycle, @booking) %></p>
-
-<p><%= link_to "See all your bookings", bookings_path %></p>
-
+<div class="booking-status">
+	<div class="booking-status-content">
+	  <video width="100vw" src="https://res.cloudinary.com/cris7cris/video/upload/v1541247453/iRideNairobi/Roberto.mp4" type="video/mp4" autoplay loop>
+      </video>
+    	<div class="booking-status-overlay">
+    	  <h4> Enjoy your ride <%= @booking.user.email.split('@').first.capitalize %>! </h4>
+    	  <p> You've just booked <%= @booking.motorcycle.name %> from <%= @booking.start_date %> to <%= @booking.end_date %></p>
+          <p><%= link_to "Add a Review", new_motorcycle_booking_review_path(@booking.motorcycle, @booking) %></p>
+          <p><%= link_to "See all your bookings", bookings_path %></p>
+    	</div>
+    </div>
+</div>
