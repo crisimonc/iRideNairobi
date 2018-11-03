@@ -5,14 +5,16 @@
 // }
 
 .card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  height: 250px;
   background-size: cover !important;
   margin: 5px;
   background-position: center;
   color: #CFA775;
   position: relative;
+  border-radius: 5px;
 }
+
+
 .card-user {
   position: absolute;
   right: 10px;
@@ -28,10 +30,15 @@
   text-transform: uppercase;
 }
 
+
 .card-description {
+  font-family: 'Raleway', sans-serif;
+  background-color: #303030;
+  padding: 5px;
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   left: 10px;
+  border-radius: 5px;
 }
 .card-description h4 {
   font-size: 24px;
@@ -43,6 +50,16 @@
   font-size: 24px;
   color: #CFA775;
   text-decoration: none;
+  background-color: #303030;
+  padding: 5px;
+}
+
+.card-category a:hover {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  background-color: #303030;
+  border-radius: 5px;
 }
 
 
@@ -67,7 +84,3 @@
   background: black;
 }
 
-
-.card:hover {
-  color: #8c622e;
-}
