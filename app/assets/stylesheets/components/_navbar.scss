@@ -61,6 +61,11 @@ i {
   line-height: 22px !important;
   padding: 10px 20px;
 }
+
+ul.dropdown-menu li a {
+  height:auto;
+}
+
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
   color: black !important;

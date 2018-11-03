@@ -26,3 +26,24 @@
     <% end %>
   </div>
 
+  <%= javascript_tag do %>
+
+  document.addEventListener("DOMContentLoaded",function(event) {
+
+  var url = new URL(window.location.href);
+  var start = url.searchParams.get("token_start");
+  var end = url.searchParams.get("token_end");
+  var start_input = document.getElementById("start_date");
+  console.log(start_input);
+  var end_input = document.getElementById("end_date");
+  start_input._flatpickr.setDate(start,true, "Y-m-d");
+  end_input._flatpickr.setDate(end,true, "Y-m-d");
+
+
+});
+
+
+
+
+  <% end %>
+

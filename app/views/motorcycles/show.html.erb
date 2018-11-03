@@ -14,10 +14,10 @@
         <button id="book-moto-btn">
           <% if user_signed_in? %>
             <div id="href-btn">
-              <%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle) %>
+              <%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle, search: {starts_at: params["search"]["starts_at"], ends_at: params["search"]["ends_at"]}) %>
             </div>
           <% else %>
-              <%= link_to "Book #{@motorcycle.name} now", new_user_registration_path(moto: params[:id]) %>
+              <%= link_to "Book #{@motorcycle.name} now", new_user_registration_path(moto: params[:id], search: {starts_at: params["search"]["starts_at"], ends_at: params["search"]["ends_at"]}) %>
           <% end %>
         </button>
       </div>
@@ -51,3 +51,4 @@
 
 
 </div>
+>>>>>>> 7f9dada931bfbc6be24b325572f0d5b3cfbe4087

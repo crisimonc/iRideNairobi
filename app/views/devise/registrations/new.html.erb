@@ -1,13 +1,13 @@
 
 <h2 style="text-align:center">Sign up</h2>
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name,:moto => params["moto"], start_date: params["start_date"], end_date: params["end_date"])) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name, moto: params["moto"], search: {starts_at: params["search"]["starts_at"], ends_at: params["search"]["ends_at"]} )) do |f| %>
 
   <%= f.error_notification %>
 
   <div class="form-inputs" style="text-align:center">
     <%= f.input :email,
                 required: true,
-                autofocus: true ,
+                autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,

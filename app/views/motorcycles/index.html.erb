@@ -8,7 +8,7 @@
 		<div class="card"  style="background-image: linear-gradient(rgba(232, 224, 224, 0.3), rgba(196, 55, 16, 0.2)), url(<%= cl_image_path(moto.picture)%>);">
 
 
-	    	<div class="card-category"><h4><%= link_to moto.name, motorcycle_path(moto) %></h4></div>
+	    	<div class="card-category"><h4><%= link_to moto.name, motorcycle_path(moto, search: {starts_at: params["search"]["starts_at"], ends_at: params["search"]["ends_at"]} ) %></h4></div>
 	        <div class="card-description">
 	      <!-- insert <div class="card"> -->
 	      		<p><%= moto.motor_type  %></p>

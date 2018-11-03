@@ -1,12 +1,11 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  
+
   <span style="font-size: 48px;">
     <i class="fas fa-motorcycle"></i>
   </span>
-
-  <% end %>
+<% end %>
 
 <%= simple_form_for :search, :url => motorcycles_path, method: "get",
   wrapper: :inline_form,
@@ -24,7 +23,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
- 
+
 
     <% if user_signed_in? %>
 
@@ -33,20 +32,17 @@
         <div class="dropdown">
           <%= image_tag "profile.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <li>  <div class="link-nav-drop">
+              <%= link_to "bookings" do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "All my bookings") %>
               <% end %>
+              </div>
             </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
+            <li>  <div class="link-nav-drop">
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
+              </div>
             </li>
           </ul>
         </div>
