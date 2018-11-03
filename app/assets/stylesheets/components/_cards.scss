@@ -1,11 +1,16 @@
 
+// .row {
+// 	display: flex;
+// 	justify-content: space-between;
+// }
+
 .card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   margin: 5px;
   background-position: center;
-  color: white;
+  color: #CFA775;
   position: relative;
 }
 .card-user {
@@ -22,19 +27,36 @@
   font-size: 15px;
   text-transform: uppercase;
 }
+
 .card-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-.card-description h2 {
+.card-description h4 {
   font-size: 24px;
+  color: #CFA775;
+  text-decoration: none;
 }
+
+.card-category a {
+  font-size: 24px;
+  color: #CFA775;
+  text-decoration: none;
+}
+
+
 .card-description p {
   font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
+  color: white;
 }
+
+.card-description p a {
+  font-size: 14px;
+  color: white;
+}
+
+
 .card-link {
   position: absolute;
   top: 0;
@@ -43,8 +65,9 @@
   width: 100%;
   z-index: 2;
   background: black;
-  opacity: 0;
 }
-.card-link:hover {
-  opacity: 0.1;
+
+
+.card:hover {
+  color: #8c622e;
 }

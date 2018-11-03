@@ -1,0 +1,42 @@
+.banner {
+	height:calc(100vh-70px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+video {
+    z-index:0;
+    height:calc(100vh-70px)
+}
+.overlay {
+    position:absolute;
+    top: 100px;
+    left: 460px;
+    z-index:1;
+    text-align: center;
+}
+
+.overlay h1 {
+	font-family: 'Allerta Stencil', sans-serif;
+	color: black;
+
+}
+
+.overlay h4 {
+	font-family: Helvetica;
+	color: black;
+
+}
+
+.home-text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.service {
+	text-align: center;
+	margin: 10px;
+}
