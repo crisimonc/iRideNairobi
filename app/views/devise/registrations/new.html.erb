@@ -1,6 +1,5 @@
 <h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name,:moto => params["moto"])) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name,:moto => params["moto"], start_date: params["start_date"], end_date: params["end_date"])) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

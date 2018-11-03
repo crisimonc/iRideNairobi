@@ -4,12 +4,12 @@
    <% @motorcycles.each do |moto|%>
 
     <div class="col-xs-12 col-sm-4">
-    	
+
 		<div class="card"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(moto.picture)%>);">
 
 	    	<div class="card-category"><h4><%= link_to moto.name, motorcycle_path(moto) %></h4></div>
 	        <div class="card-description">
-	      <!-- insert <div class="card"> -->      
+	      <!-- insert <div class="card"> -->
 	      		<p><%= moto.motor_type  %></p>
 	         	<p><%= moto.price.to_s + "USD per day" %></p>
 	         	<p><%= link_to "Edit ", edit_motorcycle_path(moto) %><%= link_to "Delete", moto, method: :delete, data: { confirm: "Are you sure you want to delete this motorcycle?" } %></p>
@@ -17,7 +17,6 @@
 	        </div>
 
 	</div>
-
 
     </div>
 

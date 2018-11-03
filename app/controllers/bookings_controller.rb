@@ -28,9 +28,12 @@ class BookingsController < ApplicationController
 
     @booking.motorcycle = Motorcycle.find(params[:motorcycle_id])
     @booking.user = current_user
-    @booking.save
 
-    redirect_to motorcycle_booking_path(@booking.motorcycle, @booking)
+    if @booking.save
+      redirect_to motorcycle_booking_path(@booking.motorcycle, @booking)
+    else
+      render :new
+    end
   end
 
 
