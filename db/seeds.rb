@@ -1,6 +1,7 @@
 require 'open-uri'
 
 puts "Cleaning DB..."
+
 User.destroy_all
 Motorcycle.destroy_all
 Review.destroy_all
