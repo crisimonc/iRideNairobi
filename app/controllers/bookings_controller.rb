@@ -24,14 +24,16 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     @booking = Booking.new(booking_params)
 
     @booking.motorcycle = Motorcycle.find(params[:motorcycle_id])
     @booking.user = current_user
-    @booking.save
 
-    redirect_to motorcycle_booking_path(@booking.motorcycle)
+    if @booking.save
+      redirect_to motorcycle_booking_path(@booking.motorcycle, @booking)
+    else
+      render :new
+    end
   end
 
 

@@ -4,7 +4,7 @@
    <% @motorcycles.each do |moto|%>
 
     <div class="col-xs-12 col-sm-4 card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(moto.picture);">
-    	<div class="card-category"><h4><%= link_to moto.name, motorcycle_path(moto) %></h4></div>
+    	<div class="card-category"><h4><%= link_to moto.name, motorcycle_path(moto, start_date: params["search"]["starts_at"], end_date: params["search"]["ends_at"]) %></h4></div>
         <div class="card-description">
       <!-- insert <div class="card"> -->
       		<p><%= moto.motor_type  %></p>

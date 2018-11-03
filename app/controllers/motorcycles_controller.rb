@@ -3,10 +3,10 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def index
 
-    cookies[:start_date] = params["search"]["starts_at"]
-    cookies[:end_date] = params["search"]["ends_at"]
-
     if params["search"]["starts_at"].present? && params["search"]["ends_at"].present?
+    # cookies[:start_date] = params["search"]["starts_at"]
+    # cookies[:end_date] = params["search"]["ends_at"]
+
       @motorcycles = []
 
       a = Date.parse(params["search"]["starts_at"])
