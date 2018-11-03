@@ -138,9 +138,26 @@ puts "Creating Bookings..."
 end
 puts "Bookings created!"
 
-puts "Creating Reviews..."
-30.times do
+
+
+
+# # TODO: Write a seed to insert 100 posts in the database
+
+# puts 'Creating 100 fake posts...'
+# 100.times do
+#   post = Post.new(
+#     title: Faker::Name.name,
+#     url: "http:/#{Faker::Pokemon.name}/#{Faker::Pokemon.move} ",
+#     votes: rand(0..5)
+#   )
+#   post.save!
+# end
+
+# puts 'Finished!'
+
+puts "Creating Some Fake Reviews..."
+20.times do
   booking = Booking.all.sample
-  Review.create(booking: booking, content: "blabla", stars: 4)
+  Review.create(booking: booking, content: ["The best motorbike ever", "Nice", "Super Cool", "The best way to explore Nairobi"].sample, stars: rand(1..5))
 end
 puts "Reviews created!"

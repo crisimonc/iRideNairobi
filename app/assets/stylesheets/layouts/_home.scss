@@ -10,6 +10,7 @@ video {
     z-index:0;
     height:calc(100vh-70px)
 }
+
 .overlay {
     position:absolute;
     top: 100px;
@@ -39,4 +40,8 @@ video {
 .service {
 	text-align: center;
 	margin: 10px;
+}
+
+body {
+	background-color: white;
 }
