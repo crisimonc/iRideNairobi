@@ -1,0 +1,77 @@
+2js:51 You have exceeded your request quota for this API. See https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=maps_js&utm_medium=degraded&utm_campaign=billing#api-key-and-billing-errors
+_.Gc @ js:51
+util.js:224 Google Maps JavaScript API warning: NoApiKeys https://developers.google.com/maps/documentation/javascript/error-messages#no-api-keys
+qw.m @ util.js:224
+window.location.href
+"http://localhost:3000/motorcycles/20/bookings/new?token_end=2018-11-09T23%3A00%3A00.000Z&token_start=2018-11-02T23%3A00%3A00.000Z"
+var url = new URL(window.location.href)
+undefined
+var c = url.searchParams.get("token_start")
+undefined
+console.log(c)
+VM6008:1 2018-11-02T23:00:00.000Z
+undefined
+flatpickr.js:359 Error: Invalid date provided: Invalid Date
+    at Object.parseDate (flatpickr.js:303)
+    at Object.<anonymous> (flatpickr.js:1555)
+    at Object.set (flatpickr.js:1798)
+    at Object.onClose (flatpickr.js:18)
+    at triggerEvent (flatpickr.js:1974)
+    at Object.close (flatpickr.js:1202)
+    at documentClick (flatpickr.js:1268)
+    at HTMLDocument.<anonymous> (flatpickr.js:687)
+errorHandler @ flatpickr.js:359
+(anonymous) @ flatpickr.js:303
+(anonymous) @ flatpickr.js:1555
+set @ flatpickr.js:1798
+onClose @ flatpickr.js:18
+triggerEvent @ flatpickr.js:1974
+close @ flatpickr.js:1202
+documentClick @ flatpickr.js:1268
+(anonymous) @ flatpickr.js:687
+document.getElementById("start_date")
+<input class=​"form-control string optional mr-sm-2 flatpickr-input" id=​"start_date" type=​"hidden" name=​"search[starts_at]​">​
+let start_date = document.getElementById("start_date")
+undefined
+start_date.value += c
+"2018-11-02T23:00:00.000Z"
+start_date.value += "hello"
+"2018-11-02T23:00:00.000Zhello"
+let start_date = document.getElementById("start_date")
+VM6382:1 Uncaught SyntaxError: Identifier 'start_date' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM6382:1
+start_date
+<input class=​"form-control string optional mr-sm-2 flatpickr-input" id=​"start_date" type=​"hidden" name=​"search[starts_at]​" value=​"2018-11-02T23:​00:​00.000Zhello">​
+start_date._flatpickr
+{config: {…}, l10n: {…}, parseDate: ƒ, _handlers: Array(12), _bind: ƒ, …}altInput: input.form-control.string.optional.mr-sm-2.flatpickr-input.input.activecalendarContainer: div.flatpickr-calendar.hasWeeks.animate.arrowTop.openchangeMonth: ƒ changeMonth(value, is_offset)arguments: (...)caller: (...)length: 2name: "changeMonth"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: flatpickr.js:1153[[Scopes]]: Scopes[6]changeYear: ƒ changeYear(newYear)clear: ƒ clear(triggerChangeEvent)close: ƒ close()config: {_disable: Array(0), _enable: Array(0), allowInput: false, altFormat: "F j, Y", altInput: true, …}currentMonth: 10currentYear: 2018currentYearElement: input.numInput.cur-yeardays: div.dayContainerdaysContainer: div.flatpickr-daysdestroy: ƒ destroy()element: input#start_date.form-control.string.optional.mr-sm-2.flatpickr-inputformatDate: ƒ (dateObj, frmt, overrideLocale)innerContainer: div.flatpickr-innerContainerinput: input#start_date.form-control.string.optional.mr-sm-2.flatpickr-inputisEnabled: ƒ isEnabled(date, timeless)isMobile: falseisOpen: truejumpToDate: ƒ jumpToDate(jumpDate)l10n: {weekdays: {…}, months: {…}, daysInMonth: Array(12), firstDayOfWeek: 0, ordinal: ƒ, …}maxDateHasTime: falseminDateHasTime: falsemonthElements: [span.cur-month]monthNav: div.flatpickr-monthsnextMonthNav: span.flatpickr-next-monthnow: Sat Nov 03 2018 16:50:03 GMT+0100 (Central European Standard Time) {}open: ƒ open(e, positionElement)parseDate: ƒ (date, givenFormat, timeless, customLocale)prevMonthNav: span.flatpickr-prev-month.disabledrContainer: div.flatpickr-rContainerredraw: ƒ redraw()selectedDates: []set: ƒ (option, value)setDate: ƒ setDate(date, triggerChange, format)todayDateElem: span.flatpickr-day.todaytoggle: ƒ toggle(e)utils: {getDaysInMonth: ƒ}weekNumbers: div.flatpickr-weeksweekWrapper: div.flatpickr-weekwrapperweekdayContainer: div.flatpickr-weekdaysyearElements: [input.numInput.cur-year]__hideNextMonthArrow: false__hidePrevMonthArrow: true_bind: ƒ bind(element, event, handler, options)_createElement: ƒ createElement(tag, className, content)_debouncedChange: ƒ ()_handlers: (12) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]_input: input.form-control.string.optional.mr-sm-2.flatpickr-input.input.active_positionCalendar: ƒ positionCalendar(customPositionElement)_positionElement: input.form-control.string.optional.mr-sm-2.flatpickr-input.input.active_setHoursFromDate: ƒ setHoursFromDate(dateObj)_showTimeInput: falseshowTimeInput: (...)_hideNextMonthArrow: (...)_hidePrevMonthArrow: (...)get showTimeInput: ƒ ()set showTimeInput: ƒ (bool)get _hideNextMonthArrow: ƒ ()set _hideNextMonthArrow: ƒ (bool)get _hidePrevMonthArrow: ƒ ()set _hidePrevMonthArrow: ƒ (bool)__proto__: Object
+start_date._flatpickr.setDate("2016-10-20", "Y-m-d")
+undefined
+flatpickr.js:359 Error: Invalid date provided: Invalid Date
+    at Object.parseDate (flatpickr.js:303)
+    at Object.<anonymous> (flatpickr.js:1555)
+    at Object.set (flatpickr.js:1798)
+    at Object.onClose (flatpickr.js:18)
+    at triggerEvent (flatpickr.js:1974)
+    at Object.close (flatpickr.js:1202)
+    at documentClick (flatpickr.js:1268)
+    at HTMLDocument.<anonymous> (flatpickr.js:687)
+errorHandler @ flatpickr.js:359
+(anonymous) @ flatpickr.js:303
+(anonymous) @ flatpickr.js:1555
+set @ flatpickr.js:1798
+onClose @ flatpickr.js:18
+triggerEvent @ flatpickr.js:1974
+close @ flatpickr.js:1202
+documentClick @ flatpickr.js:1268
+(anonymous) @ flatpickr.js:687
+start_date._flatpickr.setDate("2016-10-20", "Y-m-d")
+undefined
+start_date._flatpickr.setDate("2016-10-20",true, "Y-m-d")
+undefined
+start_date._flatpickr.setDate("2019-10-20",true, "Y-m-d")
+undefined
+c
+"2018-11-02T23:00:00.000Z"
+start_date._flatpickr.setDate(c,true, "Y-m-d")
+undefined
