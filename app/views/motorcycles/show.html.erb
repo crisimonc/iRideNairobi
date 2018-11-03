@@ -1,37 +1,53 @@
-<h2><%= @motorcycle.name %></h2>
-<p><%= @motorcycle.motor_type  %></p>
-<p><%= @motorcycle.description  %></p>
-<p><%= @motorcycle.price.to_s + " USD per day" %></p>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-6">
+      <div id="motorcycle-image">
+        <% if @motorcycle.uploaded_photo.present? %>
+          <%= cl_image_tag(@motorcycle.uploaded_photo) %>
+        <% else %>
+          <%= image_tag(@motorcycle.picture) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row-fluid">
+        <button id="book-moto-btn">
+          <% if user_signed_in? %>
+            <div id="href-btn">
+              <%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle) %>
+            </div>
+          <% else %>
+              <%= link_to "Book #{@motorcycle.name} now", new_user_registration_path(moto: params[:id]) %>
+          <% end %>
+        </button>
+      </div>
+      <div class="row-fluid">
+          <br>
+          <p><%= @motorcycle.motor_type  %></p>
+          <br>
+          <p><%= @motorcycle.description  %></p>
+          <br>
+          <p style="font-weight:bold" align="center" id="big-font"><%= @motorcycle.price.to_s + " USD per day" %></p>
+      </div>
+      <div class="row-fluid">
+         <div class="card">
+            <p>
+              <%= pluralize @motorcycle.reviews.size, "review" %>
+            </p>
+            <br>
+            <% @motorcycle.reviews.each do |review|%>
+              <% review.stars.times do%>
+                <i class="far fa-star"></i>
+              <% end %>
+              <br>
+              <p><%= review.content %></p>
+              <br>
+            <% end %>
+          </div>
+      </div>
+
+    </div>
+  </div>
 
 
- <% if @motorcycle.uploaded_photo.present? %>
-  <%= cl_image_tag(@motorcycle.uploaded_photo, height: 300, width: 400, crop: :fill) %>
-  <% else %>
-  <%= image_tag(@motorcycle.picture) %>
-<% end %>
-
-<p>
-  <%= pluralize @motorcycle.reviews.size, "review" %>
-</p>
-<br>
-  <% @motorcycle.reviews.each do |review|%>
-    <% review.stars.times do%>
-      <i class="far fa-star"></i>
-     <% end %>
-    <br>
-    <p><%= review.content %></p> 
-    <br>
- <% end %>
-
-
-<button>
-<% if user_signed_in? %>
-  <%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle) %>
-    <% else %>
-  <%= link_to "Book #{@motorcycle.name} now", new_user_registration_path(moto: params[:id]) %>
-<% end %>
-</button>
-
-
-
-
+</div>
