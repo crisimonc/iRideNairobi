@@ -1,0 +1,42 @@
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col-md-6 {
+  margin-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 50%;
+  position: relative;
+  display: block;
+}
+
+#motorcycle-image {
+  width: 100%;
+  height: 1000px;
+  overflow: hidden;
+
+  img {
+  width: 100%;
+  }
+}
+
+#book-moto-btn {
+  padding: 20px 160px;
+  display: inline-block;
+  font-size: 43px;
+  font-weight: bold;
+  color: #303030;
+  background-color: #CFA775;
+
+  a {
+    color: #303030;
+  }
+}
+
+#big-font {
+  font-size: 50px;
+}
