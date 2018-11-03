@@ -19,16 +19,16 @@
       <i class="far fa-star"></i>
      <% end %>
     <br>
-    <p><%= review.content %></p> 
+    <p><%= review.content %></p>
     <br>
  <% end %>
 
 
 <button>
 <% if user_signed_in? %>
-  <%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle) %>
+  <%= link_to "Book #{@motorcycle.name} now", new_motorcycle_booking_path(@motorcycle, start_date: params["start_date"], end_date: params["end_date"]) %>
     <% else %>
-  <%= link_to "Book #{@motorcycle.name} now", new_user_registration_path(moto: params[:id]) %>
+  <%= link_to "Book #{@motorcycle.name} now", new_user_registration_path(moto: params[:id], start_date: params["start_date"], end_date: params["end_date"]) %>
 <% end %>
 </button>
 

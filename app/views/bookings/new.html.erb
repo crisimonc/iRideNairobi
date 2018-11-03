@@ -1,19 +1,28 @@
+
 <div class="container padded-top">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= simple_form_for [@motorcycle, @booking] do |f| %>
         <%= f.input :address %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
         <%= f.submit "request booking", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
 </div>
 
+  <div class="child_1" id="map" style="width: 100%; height: 600px" data-markers="<%= @markers.to_json %>">
+  </div>
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
->
-</div>
+  <div class="child_2">
+    <%= simple_form_for [@motorcycle, @booking] do |f| %>
+      <%= f.input :address %>
+      <%= f.submit "Enter delivery address", class: "btn btn-primary" %>
+    <% end %>
+    <br>
+    <%= simple_form_for [@motorcycle, @booking] do |f| %>
+      <%= f.submit "Confirm location and book motorcycle", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+

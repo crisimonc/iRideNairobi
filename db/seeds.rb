@@ -1,9 +1,11 @@
 require 'open-uri'
 
 puts "Cleaning DB..."
-Booking.destroy_all
+
 User.destroy_all
 Motorcycle.destroy_all
+Review.destroy_all
+Booking.destroy_all
 
 puts "---------------------"
 puts "Login:"
@@ -19,21 +21,21 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
   {
     name: "Blizzard",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
   {
     name: "Gaddafi",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -41,7 +43,7 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -49,7 +51,7 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -57,7 +59,7 @@ motorcycles_attributes = [
     motor_type: "Yamaha XT225",
     description: "Engine size: 225cc / max speed 120 kph | Fuel usage: circa 650 KSh / 100 km | Manual transition with 5 gears",
     price: 19,
-    picture: "YamahaXT225.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179869/iRideNairobi/YamahaXT225.jpg.jpg",
   },
 
   {
@@ -65,21 +67,21 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179869/iRideNairobi/YamahaXT225.jpg.jpg",
   },
   {
     name: "Mathai",
     motor_type: "Wego 110",
     description: "Engine size: 110cc / max speed 85 kph | Fuel usage: circa 250 KSh / 100 km | Automatic transition",
     price: 13,
-    picture: "Wego110.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179738/iRideNairobi/Wego110.jpg",
   },
   {
     name: "Nyerere",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179738/iRideNairobi/Wego110.jpg",
   },
 
   {
@@ -87,7 +89,7 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -95,7 +97,7 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
 
   {
@@ -103,41 +105,27 @@ motorcycles_attributes = [
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
   {
     name: "Steve Biko",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   },
   {
     name: "Uhuru",
     motor_type: "Boxer X150",
     description: "Engine size: 150cc / max speed 100 kph | Fuel usage: circa 250 KSh / 100 km | Manual transition with 4 gears",
     price: 13,
-    picture: "BoxerX150.jpg",
+    picture: "https://res.cloudinary.com/cris7cris/image/upload/v1541179735/iRideNairobi/BoxerX150.jpg.jpg",
   }
 ]
 
 Motorcycle.create!(motorcycles_attributes)
 puts "Motorcycles created!"
 
-# create_table "motorcycles", force: :cascade do |t|
-#   t.string "name"
-#   t.string "type"
-#   t.text "description"
-#   t.integer "price"
-#   t.string "picture"
-#
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 def time_rand from = 0.0, to = Time.now
   Time.at(from + rand * (to.to_f - from.to_f))
